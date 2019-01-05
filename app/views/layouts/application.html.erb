@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Onenote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +11,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="padding-top: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <% if notice.present? %>
+              <div class="alert">
+                <%= notice %>
+              </div>
+            <% end %>
+            <% if alert.present? %>
+              <div class="alert">
+                <%= alert %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>

@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import "normalize";
+
+body{
+  background: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: white;
+}
+
+hr {
+  background-color: white
+}
+.home{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -50px;
+}
+
+.content {
+  border-top: 1px solid white;
+  margin-top: 30px;
+}
+
+a{
+  word-break: break-all;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+  display: block;
+  color: white !important;
+  text-decoration: none !important;
+  position: relative;
+}
+
+a::after{
+  content: "";
+  background: white;
+  mix-blend-mode: exclusion;
+  width: calc(100% + 20px);
+  height: 0;
+  position: absolute;
+  bottom: -4px;
+  left: -10px;
+  transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+a:hover::after{
+  height: calc(100% + 8px)
+}

@@ -1,0 +1,10 @@
+.col-md-12{style: "word-break: break-all;"}
+  %h1= @note.title
+  %hr
+
+  %p{class: "text-justify"}= @note.content
+
+  .content
+    = link_to "All notes", notes_path
+    = link_to "Edit", edit_note_path(@note)
+    = link_to "Remove", note_path(@note), method: :delete, data: { confirm: "Are you sure?"}

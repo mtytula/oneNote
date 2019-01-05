@@ -1,0 +1,9 @@
+.col-md-6
+  - @notes.each do |note|
+    .d-inline-block{style:'margin: 10px; border-bottom: 4px solid lightblue; '}
+      %h2{style: 'text-overflow: ellipsis;'}= link_to note.title, note
+      %p{class: 'cart-subtitle mb-2 text-muted'}= time_ago_in_words(note.created_at)
+  .content
+    .btn-group
+      = link_to "New Note", new_note_path, class: 'btn'
+      = link_to 'Sign out', destroy_user_session_path, class: 'btn', :method => :delete
